@@ -1,0 +1,73 @@
+---
+title       : Body Mass Index (BMI) Calculator
+subtitle    : An RStudio Shiny Application
+author      : Mark van den Hurk
+job         : Coursera - Data Science - Developing Data Products
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction: BMI Calculator App
+
+This is a Slidify pitch presentation for the [**Body Mass Index (BMI) Calculator**](https://mvandenhurk.shinyapps.io/calculatorBMI) Shiny application developed as part of the Developing Data Products course project (*Data Science* Specialization on Coursera, offered by Johns Hopkins University).<br>
+
+### Overview of App Functions
+
+The BMI Calculator App:
+- Takes a user's height and weight measurements (either in imperial or metric units) as input.
+- Calculates from those measures the **Body Mass Index (BMI)**.
+- Indicates the weight category associated with the calculated BMI:
+   - Underweight: BMI is less than 18.5
+   - Normal weight: BMI is 18.5 to 24.9
+   - Overweight: BMI is 25 to 29.9
+   - Obese: BMI is 30 or more
+
+--- .class #id
+
+## Body Mass Index
+
+The **Body Mass Index (BMI)** is a number indicating whether a person is at a healthy weight for their height. It is calculated from weight and height as follows:
+
+$$BMI = \frac{\text{weight in kilograms}}{\text{height in meters}^2} = \frac{\text{weight in pounds}*703}{\text{height in inches}^2}$$ 
+
+In general, the higher the BMI the more you might be at risk for health problems such as heart disease, high blood pressure and type II diabetes. However, be aware that:
+
+1. BMI may overestimate body fat in individuals with muscular build, such as athletes.
+2. BMI may underestimate body fat in people who have lost muscle, such as some elderly persons.
+
+### BMI Calculator App
+Because overweight and obesity are associated with serious health risks and substantial health care costs, it is of great importance that people understand what constitutes *normal* weight. The [**Body Mass Index (BMI) Calculator**](https://mvandenhurk.shinyapps.io/calculatorBMI) App assists with this purpose by calculating the BMI.
+
+--- .class #id
+
+## BMI Calculator App: Performance & Output
+
+Using the user input of height and weight (in imperial or metric units, to be specified by the user), the app calculates the BMI number. The app shows (in real time) the height and weight entered by the user, calculates the BMI number (upon clicking of the "Calculate BMI" button), and shows this BMI number along with its associated category of normal or abnormal weight.
+
+### Example
+For a person that is 183 centimeters tall and weighig 79 kilograms, the app calculates the BMI number as follows:
+
+```r
+height <- 183
+weight <- 79
+BMI <- weight / (height / 100)^2
+round(BMI, 1)
+```
+
+```
+## [1] 23.6
+```
+
+--- .class #id
+
+## BMI Calculator App: Screenshot & Links
+
+<center> ![](BMICalculator_screenshot.png) </center>
+
+Link to app: https://mvandenhurk.shinyapps.io/calculatorBMI
+
+Link to GitHub (for source code): https://github.com/mvandenhurk/coursera-devdataprod

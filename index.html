@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Body Mass Index (BMI) Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Body Mass Index (BMI) Calculator">
+  <meta name="author" content="Mark van den Hurk">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Body Mass Index (BMI) Calculator</h1>
+    <h2>An RStudio Shiny Application</h2>
+    <p>Mark van den Hurk<br/>Coursera - Data Science - Developing Data Products</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction: BMI Calculator App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is a Slidify pitch presentation for the <a href="https://mvandenhurk.shinyapps.io/calculatorBMI"><strong>Body Mass Index (BMI) Calculator</strong></a> Shiny application developed as part of the Developing Data Products course project (<em>Data Science</em> Specialization on Coursera, offered by Johns Hopkins University).<br></p>
+
+<h3>Overview of App Functions</h3>
+
+<p>The BMI Calculator App:</p>
+
+<ul>
+<li>Takes a user&#39;s height and weight measurements (either in imperial or metric units) as input.</li>
+<li>Calculates from those measures the <strong>Body Mass Index (BMI)</strong>.</li>
+<li>Indicates the weight category associated with the calculated BMI:
+
+<ul>
+<li>Underweight: BMI is less than 18.5</li>
+<li>Normal weight: BMI is 18.5 to 24.9</li>
+<li>Overweight: BMI is 25 to 29.9</li>
+<li>Obese: BMI is 30 or more</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Body Mass Index</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The <strong>Body Mass Index (BMI)</strong> is a number indicating whether a person is at a healthy weight for their height. It is calculated from weight and height as follows:</p>
+
+<p>\[BMI = \frac{\text{weight in kilograms}}{\text{height in meters}^2} = \frac{\text{weight in pounds}*703}{\text{height in inches}^2}\] </p>
+
+<p>In general, the higher the BMI the more you might be at risk for health problems such as heart disease, high blood pressure and type II diabetes. However, be aware that:</p>
+
+<ol>
+<li>BMI may overestimate body fat in individuals with muscular build, such as athletes.</li>
+<li>BMI may underestimate body fat in people who have lost muscle, such as some elderly persons.</li>
+</ol>
+
+<h3>BMI Calculator App</h3>
+
+<p>Because overweight and obesity are associated with serious health risks and substantial health care costs, it is of great importance that people understand what constitutes <em>normal</em> weight. The <a href="https://mvandenhurk.shinyapps.io/calculatorBMI"><strong>Body Mass Index (BMI) Calculator</strong></a> App assists with this purpose by calculating the BMI.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>BMI Calculator App: Performance &amp; Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Using the user input of height and weight (in imperial or metric units, to be specified by the user), the app calculates the BMI number. The app shows (in real time) the height and weight entered by the user, calculates the BMI number (upon clicking of the &quot;Calculate BMI&quot; button), and shows this BMI number along with its associated category of normal or abnormal weight.</p>
+
+<h3>Example</h3>
+
+<p>For a person that is 183 centimeters tall and weighig 79 kilograms, the app calculates the BMI number as follows:</p>
+
+<pre><code class="r">height &lt;- 183
+weight &lt;- 79
+BMI &lt;- weight / (height / 100)^2
+round(BMI, 1)
+</code></pre>
+
+<pre><code>## [1] 23.6
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>BMI Calculator App: Screenshot &amp; Links</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center> <img src="BMICalculator_screenshot.png" alt=""> </center></p>
+
+<p>Link to app: <a href="https://mvandenhurk.shinyapps.io/calculatorBMI">https://mvandenhurk.shinyapps.io/calculatorBMI</a></p>
+
+<p>Link to GitHub (for source code): <a href="https://github.com/mvandenhurk/coursera-devdataprod">https://github.com/mvandenhurk/coursera-devdataprod</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction: BMI Calculator App'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Body Mass Index'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='BMI Calculator App: Performance &amp; Output'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='BMI Calculator App: Screenshot &amp; Links'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
